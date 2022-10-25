@@ -29,7 +29,7 @@ const Home = () => {
       <div>
 
       </div>
-      <div>
+      <div className='container1' style={{display: 'flex', justifyContent: 'flex-start', marginTop: '8px', color: 'black'}}>
         {renderUserList()}
       </div>
     </main>
