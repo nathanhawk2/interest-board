@@ -5,13 +5,11 @@ import Navbar from '../Navbar';
 const Header = () => {
   return (
     <header>
-      <div>
-        <Link to="/">
-          <h1 className='head' style={{display: 'flex', justifyContent: 'flex-start', color: 'black'}}>Home</h1>
+      <div style={{display:'flex', justifyContent:'flex-end', margin:'3px'}}>
+        <Link to="/" className='homeBtn'>
+          <h3 id='home'>Home</h3>
         </Link>
-      </div>
-      <div>
-        <Navbar />
+        <Navbar/>
       </div>
     </header>
   );
