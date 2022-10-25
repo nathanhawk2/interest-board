@@ -7,11 +7,10 @@ const Header = () => {
     <header>
       <div>
         <Link to="/">
-          <h1 className='head' style={{display: 'flex', justifyContent: 'flex-start', color: 'black'}}>User List</h1>
+          <h1 className='head' style={{display: 'flex', justifyContent: 'flex-start', color: 'black'}}>Home</h1>
         </Link>
       </div>
       <div>
-        <p style={{marginTop: '8px'}}>Simple App to View Users.</p>
         <Navbar />
       </div>
     </header>
