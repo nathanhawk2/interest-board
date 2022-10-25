@@ -3,3 +3,11 @@ html, * {
   padding: 0;
   box-sizing: border-box;
 }
+#home{
+  justify-self: flex-start;
+  position: absolute;
+  left: 5px;
+}
+#home:hover{
+  color: red;
+}
