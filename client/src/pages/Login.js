@@ -49,7 +49,7 @@ const Login = () => {
       )
     }
     return (
-      <form onSubmit={handleFormSubmit}>
+      <form style={{display: 'inline-block', border: 'solid 1px black', boxSizing: 'border-box', justifyContent: 'space-between'}} onSubmit={handleFormSubmit}>
         <input
           placeholder="Your email"
           name="email"
@@ -64,7 +64,7 @@ const Login = () => {
           value={formState.password}
           onChange={handleChange}
         />
-        <button type="submit">
+        <button style={{cursor: 'pointer', backgroundColor: 'lightgreen'}} type="submit">
           Submit
         </button>
       </form>
@@ -73,7 +73,7 @@ const Login = () => {
 
   return (
     <main>
-      <h4>Login</h4>
+      <h4 style={{marginTop: '8px'}}>Login</h4>
       <div>
         {renderForm()}
         {error && <div>{error.message}</div>}
