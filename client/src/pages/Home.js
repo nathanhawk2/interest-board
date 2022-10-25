@@ -27,7 +27,7 @@ const Home = () => {
   return (
     <main>
       <div>
-        {renderUsername()}
+
       </div>
       <div>
         {renderUserList()}
