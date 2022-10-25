@@ -24,7 +24,7 @@ function Navbar() {
   // If logged out show login controls
   return (
     <>
-      <Link to="/login">
+      <Link style={{display: 'flex'}} to="/login">
         Login
       </Link>
       <Link to="/signup">
