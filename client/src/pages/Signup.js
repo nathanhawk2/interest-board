@@ -47,7 +47,7 @@ const Signup = () => {
       )
     } 
     return (
-      <form onSubmit={handleFormSubmit}>
+      <form style={{display: 'inline-block', border: 'solid 1px black', boxSizing: 'border-box', justifyContent: 'space-between'}} onSubmit={handleFormSubmit}>
         <input
           placeholder="Your username"
           name="username"
@@ -69,7 +69,7 @@ const Signup = () => {
           value={formState.password}
           onChange={handleChange}
         />
-        <button type="submit">
+        <button style={{cursor: 'pointer', backgroundColor: 'lightgreen'}} type="submit">
           Submit
         </button>
       </form>
