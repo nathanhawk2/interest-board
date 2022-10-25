@@ -24,12 +24,14 @@ function Navbar() {
   // If logged out show login controls
   return (
     <>
+    <div className='logIn'>
       <Link style={{display: 'flex'}} to="/login">
         Login
       </Link>
-      <Link to="/signup">
+      <Link style={{display: 'flex'}} to="/signup">
         Signup
       </Link>
+      </div>
     </>
   )
 }
