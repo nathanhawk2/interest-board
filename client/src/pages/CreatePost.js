@@ -15,13 +15,6 @@ export default function createPost() {
       </form>
       <div id="outputtext"></div>
     </div>
-    <div style={{margin:'3px', textAlign:'start'}}>
-      <input type="text" placeholder="Compose your post here" id="post"></input>
-    </div>
-    <button className="postBtn" style={{justifyContent:'center'}}>Submit Post</button>
-  </form>
-  
-</div>
   );
 }
 
