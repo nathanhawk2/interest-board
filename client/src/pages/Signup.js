@@ -47,29 +47,29 @@ const Signup = () => {
       )
     } 
     return (
-      <form style={{display: 'inline-block', border: 'solid 1px black', boxSizing: 'border-box', justifyContent: 'center'}} onSubmit={handleFormSubmit}>
-        <input
-          placeholder="Your username"
+      <form style={{display: 'flex', boxSizing: 'border-box', justifyContent: 'center', flexDirection: 'column'}} onSubmit={handleFormSubmit}>
+        <input style={{ marginRight: '20px', height: '60px', width: '400px', borderRadius: '9px', marginTop: '30px'}}
+          placeholder="   Your username"
           name="username"
           type="text"
           value={formState.name}
           onChange={handleChange}
         />
-        <input
-          placeholder="Your email"
+        <input style={{ marginRight: '20px', height: '60px', width: '400px', borderRadius: '9px', marginTop: '30px'}}
+          placeholder="   Your email"
           name="email"
           type="email"
           value={formState.email}
           onChange={handleChange}
         />
-        <input
-          placeholder="******"
+        <input style={{ height: '60px', width: '400px', marginRight: '5px', borderRadius: '9px', marginTop: '30px'}}
+          placeholder="   ******"
           name="password"
           type="password"
           value={formState.password}
           onChange={handleChange}
         />
-        <button style={{cursor: 'pointer', backgroundColor: 'lightgreen'}} type="submit">
+        <button style={{cursor: 'pointer', justifyContent: 'center', backgroundColor: 'lightgreen', width: '400px', height: '40px', borderRadius: '9px'}} type="submit">
           Submit
         </button>
       </form>
@@ -78,7 +78,7 @@ const Signup = () => {
 
   return (
     <main>
-      <h3 style={{display: 'flex', justifyContent: 'center'}}>Sign Up</h3>
+      <h1 style={{display: 'flex', justifyContent: 'center'}}>Sign Up</h1>
       <div className='container' style={{display: 'flex', justifyContent: 'center', marginTop: '10px'}}>
         {renderForm()}
         {error && <div>{error.message}</div>}
