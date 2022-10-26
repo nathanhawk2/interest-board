@@ -56,7 +56,7 @@ const typeDefs = gql`
     addUser(email:String!, username:String!, password:String!): Auth
     login(email:String!, password:String!): Auth
     register(registerInput: RegisterInput): User!
-    createPost(body: String!): Post!
+    createPost(id: ID!, body: String!, username:String!, createdAt:String!): Post!
     deletePost(postId: ID!): String!
     createComment(postId: String!, body: String!): Post!
     deleteComment(postId: ID!, commentId: ID!): Post!
