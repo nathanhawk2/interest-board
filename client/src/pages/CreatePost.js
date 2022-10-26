@@ -8,9 +8,10 @@ export default function createPost() {
     <div style={{margin:'3px'}}>
       <input type="text" id="theme" placeholder="Theme"></input>
     </div>
-    <div style={{margin:'3px'}}>
+    <div style={{margin:'3px', textAlign:'center'}}>
       <input type="text" placeholder="Compose your post here" id="post"></input>
     </div>
+    <button className="postBtn" style={{justifyContent:'center'}}>Submit Post</button>
   </form>
   
 </div>
