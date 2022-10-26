@@ -47,7 +47,7 @@ const Signup = () => {
       )
     } 
     return (
-      <form style={{display: 'inline-block', border: 'solid 1px black', boxSizing: 'border-box', justifyContent: 'space-between'}} onSubmit={handleFormSubmit}>
+      <form style={{display: 'inline-block', border: 'solid 1px black', boxSizing: 'border-box', justifyContent: 'center'}} onSubmit={handleFormSubmit}>
         <input
           placeholder="Your username"
           name="username"
@@ -78,8 +78,8 @@ const Signup = () => {
 
   return (
     <main>
-      <h4>Sign Up</h4>
-      <div>
+      <h3 style={{display: 'flex', justifyContent: 'center'}}>Sign Up</h3>
+      <div className='container' style={{display: 'flex', justifyContent: 'center', marginTop: '10px'}}>
         {renderForm()}
         {error && <div>{error.message}</div>}
       </div>
