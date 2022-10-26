@@ -11,3 +11,7 @@ html, * {
 #home:hover{
   color: red;
 }
+#post  {
+  min-height:150px;
+}
+
