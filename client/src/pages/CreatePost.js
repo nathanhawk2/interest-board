@@ -2,7 +2,7 @@ import React from "react";
 
 export default function createPost() {
   return (
-    <div className="container">
+<div style={{justifyContent:'center', display:'flex'}}>
   <h2>Create a Post</h2>
   <div>
     <form>
