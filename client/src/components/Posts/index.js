@@ -6,7 +6,7 @@ const PostList = ({ post, theme }) => {
   }
 
   return (
-    
+    <div></div>
   );
 };
 
