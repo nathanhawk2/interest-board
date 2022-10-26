@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import React from 'react';
 import { useQuery } from '@apollo/client';
 // Utilities
 import Auth from '../utils/auth';
@@ -23,7 +22,7 @@ const NewPost = () => {
 
             </div>
             <div >
-                {renderUserList()}
+                {UserList()}
             </div>
         </main>
     );
