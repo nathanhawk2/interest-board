@@ -20,6 +20,20 @@ export const QUERY_USER = gql`
   }
 `;
 
+export const QUERY_POST = gql`
+  query post {
+    post {
+      _id
+      body
+      createdAt
+      username
+      comments
+      likes
+      likeCount
+      commentCount 
+    }
+  }
+`;
 export const QUERY_ME = gql`
   query me {
     me {
@@ -29,3 +43,23 @@ export const QUERY_ME = gql`
     }
   }
 `;
+export const QUERY_COMMENT = gql`
+  query comment {
+    comment{
+    _id
+    createdAt
+    username
+    body
+    }
+  }
+`;
+
+export const QUERY_LIKE = gql`
+  query like{
+    like{
+    _id
+    createdAt
+    username
+    }  
+  }
+`
