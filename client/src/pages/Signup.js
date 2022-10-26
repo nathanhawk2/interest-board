@@ -69,7 +69,7 @@ const Signup = () => {
           value={formState.password}
           onChange={handleChange}
         />
-        <button style={{cursor: 'pointer', justifyContent: 'center', backgroundColor: 'lightgreen', width: '400px', height: '40px', borderRadius: '9px'}} type="submit">
+        <button style={{cursor: 'pointer', justifyContent: 'center', backgroundColor: 'lightblue', width: '400px', height: '40px', borderRadius: '9px'}} type="submit">
           Submit
         </button>
       </form>
