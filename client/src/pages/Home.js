@@ -17,7 +17,7 @@ const Home = () => {
     } else {
       return <UserList users={users} title="List of Users" />
     }
-  } 
+  }
 
   const renderUsername = () => {
     if (!Auth.loggedIn()) return null;
@@ -26,10 +26,10 @@ const Home = () => {
 
   return (
     <main>
-      <div style={{display: 'flex'}} className='container'>
-        {renderUsername()}
+      <div>
+
       </div>
-      <div className='container1' style={{display: 'flex', justifyContent: 'flex-start', marginTop: '8px', color: 'black'}}>
+      <div className='container1' style={{ display: 'flex', justifyContent: 'flex-start', marginTop: '8px', color: 'black' }}>
         {renderUserList()}
       </div>
     </main>

@@ -49,22 +49,22 @@ const Login = () => {
       )
     }
     return (
-      <form style={{display: 'inline-block', border: 'solid 1px black', boxSizing: 'border-box', justifyContent: 'space-between'}} onSubmit={handleFormSubmit}>
-        <input
+      <form style={{display: 'flex', boxSizing: 'border-box', justifyContent: 'center', flexDirection: 'column'}} onSubmit={handleFormSubmit}>
+        <input style={{ marginRight: '20px', height: '60px', width: '400px', borderRadius: '9px', marginTop: '30px'}}
           placeholder="Your email"
           name="email"
           type="email"
           value={formState.email}
           onChange={handleChange}
         />
-        <input
+        <input style={{ marginRight: '20px', height: '60px', width: '400px', borderRadius: '9px', marginTop: '30px'}}
           placeholder="******"
           name="password"
           type="password"
           value={formState.password}
           onChange={handleChange}
         />
-        <button style={{cursor: 'pointer', backgroundColor: 'lightgreen'}} type="submit">
+        <button style={{cursor: 'pointer', justifyContent: 'center', backgroundColor: 'lightblue', width: '400px', height: '40px', borderRadius: '9px', marginTop: '30px'}} type="submit">
           Submit
         </button>
       </form>
@@ -72,12 +72,13 @@ const Login = () => {
   };
 
   return (
-    <main>
-      <h4 style={{marginTop: '8px'}}>Login</h4>
-      <div>
+    <main className="d-flex m-5">
+      <h4 style={{display: 'flex', justifyContent: 'center', fontSize: '30px'}}>Login</h4>
+      <div className='container' style={{display: 'flex', justifyContent: 'center', marginTop: '10px'}}>
         {renderForm()}
         {error && <div>{error.message}</div>}
       </div>
+     
     </main>
   );
 };
