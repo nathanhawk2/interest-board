@@ -52,9 +52,9 @@ const Profile = () => {
   const renderCurrentUserInfo = () => {
     if (id) return null;
     return (
-      <ul>
-        <li>username: {user.username}</li>
-        <li>email: {user.email}</li>
+      <ul style={{ padding: '6px'}}>
+        <li>Username: {user.username}</li>
+        <li>Email: {user.email}</li>
       </ul>
     );
   }
@@ -62,11 +62,19 @@ const Profile = () => {
   return (
     <div>
       <div>
-        <h2>
+        <h2 style={{ padding: '5px'}}>
           Viewing {id ? `${user.username}'s` : 'your'} profile.
         </h2>
         {renderCurrentUserInfo()}
         {renderUserList()}
+      </div>
+      <h1 style={{ display: 'flex', justifyContent: 'center'}}>Bio</h1>
+      <p style={{ display: 'inline-block', justifyContent: 'center', textAlign: 'center', padding: '20px', marginLeft: '500px', marginRight: '500px'}}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vitae velit non ligula pretium consequat. Vivamus pretium rutrum tortor, vel consequat nunc maximus sit amet. Ut pharetra rutrum justo, in rhoncus risus aliquam in. Praesent lacus lacus, condimentum ut turpis a, tempus ornare leo. Aliquam consectetur, est vel hendrerit finibus, purus risus blandit odio</p>
+      <div>
+        <h1 style={{ display: 'flex', justifyContent: 'center'}}>Recent Posts</h1>
+        <div>
+          
+        </div>
       </div>
     </div>
   );
