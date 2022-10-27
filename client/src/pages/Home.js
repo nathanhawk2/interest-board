@@ -32,8 +32,25 @@ const Home = () => {
     return AuthService.getProfile().data.username;
   }
 
+  function searchF() {
+    var input, filter, li, a, i, txtValue;
+    input = document.getElementById('myInput');
+    filter = input.value.toUpperCase();
+  
+    for (i = 0; i < li.length; i++) {
+      a = li[i].getElementsByTagName("a")[0];
+      txtValue = a.textContent || a.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        li[i].style.display = "";
+      } else {
+        li[i].style.display = "none";
+      }
+    }
+  }
+
   return (
     <main>
+      <input style={{ display: 'flex', borderRadius: '8px', width: '200px', height: '30px'}} type="text" id="myInput" onKeyUp="searchF()" placeholder="   Search for topics.."></input>
       <div style={{ display: 'flex' }} className='container'>
         {renderUsername()}
       </div>
