@@ -19,17 +19,17 @@ const typeDefs = gql`
     body: String!
     createdAt: String!
     theme:String
-    username: String!
-    comments: [Comment]!
-    likes: [Like]!
-    likeCount: Int!
-    commentCount: Int!
+    comments: [Comment]
+    likes: [Like]
+    likeCount: Int
+    commentCount: Int
+    user: ID!
   }
 
   type Comment {
     id: ID!
     createdAt: String!
-    username: String!
+    user: ID!
     body: String!
   }
 
@@ -59,9 +59,9 @@ type Query {
     addUser(email:String!, username:String!, password:String!): Auth
     login(email:String!, password:String!): Auth
     register(registerInput: RegisterInput): User!
-    createPost(id: ID!, body: String!, username:String!, theme: String, createdAt:String!): Post!
+    createPost(userId: ID!, body: String!, username:String!, theme: String, createdAt:String!): Post!
     deletePost(postId: ID!): String!
-    createComment(postId: String!, body: String!): Post!
+    createComment(postId: ID!, body: String!, userId: ID!): Post!
     deleteComment(postId: ID!, commentId: ID!): Post!
     likePost(postId: ID!): Post!
   }
