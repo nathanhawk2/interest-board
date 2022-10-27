@@ -8,6 +8,7 @@ const postSchema = new Schema ({
   },
   username: String,
   createdAt: String,
+  theme:String,
   comments: [{
     body: {
       type: String,
