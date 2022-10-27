@@ -23,9 +23,8 @@ const Home = () => {
     }
   }
 
-  const {
-    data: { getPosts: posts }
-  } = useQuery(FETCH_POSTS_QUERY);
+  const { posts } = useQuery(FETCH_POSTS_QUERY);
+ 
 
   const renderUsername = () => {
     if (!AuthService.loggedIn()) return null;
