@@ -6,7 +6,12 @@ const PostList = ({ post, theme }) => {
   }
 
   return (
-    <div></div>
+    <div>
+      <h1>
+        Lorem ipsum dolor amet.
+      </h1>
+      <p>Lorem ipsum dolor amet.</p>
+    </div>
   );
 };
 

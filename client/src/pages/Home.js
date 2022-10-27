@@ -11,6 +11,7 @@ import PostCard from '../components/Posts/PostCard';
 import PostForm from '../components/Posts/PostForm';
 import { FETCH_POSTS_QUERY } from '../utils/graphql';
 
+
 const Home = () => {
   const { loading, data } = useQuery(QUERY_USERS);
   const users = data?.users || [];
