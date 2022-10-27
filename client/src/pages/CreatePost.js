@@ -8,8 +8,6 @@ export default function createPost() {
     <div style={{margin:'3px'}}>
       <input  style={{ height: '60px', width: '400px', marginRight: '5px', borderRadius: '9px', marginTop: '30px'}} type="text" id="theme" placeholder="Theme"></input>
     </div>
-<<<<<<< HEAD
-=======
     <div style={{margin:'1px'}}>
       <input  style={{ height: '60px', width: '400px', marginRight: '5px', borderRadius: '9px', marginTop: '30px'}} type="text" placeholder="Compose your post here" id="post"></input>
     </div>
@@ -17,6 +15,5 @@ export default function createPost() {
   </form>
   
 </div>
->>>>>>> f965e92adab9c9173a6d6c56df7648fc18bb82e4
   );
 }
