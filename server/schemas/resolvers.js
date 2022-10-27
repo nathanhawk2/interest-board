@@ -16,7 +16,7 @@ const resolvers = {
       }
       throw new AuthenticationError('You need to be logged in!');
     },
-    searchPost: async (_ , args) => {
+    searchTheme: async (_ , args) => {
       return Post.find({ theme: args.theme})
     }
   },
