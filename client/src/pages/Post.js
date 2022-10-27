@@ -3,15 +3,15 @@ import gql from 'graphql-tag';
 import { useQuery, useMutation } from '@apollo/react-hooks';
 import moment from 'moment';
 import { Button, Card, Form, Grid, Image, Icon, Label } from 'semantic-ui-react';
-import { AuthCon } from '../utils/auth';
+import AuthService from '../utils/auth';
 import likeBtn from '../components/Buttons/LikeButton';
 import delBtn from '../components/Buttons/DeleteButton';
-import MyPopup from '';
+import MyPopup from '../utils/MyPopup';
 
 
 function SinglePost(props) {
   const postId = props.match.params.postId;
-  const { user } = useContext(AuthCon);
+  const { user } = useContext(AuthService);
   const commentInputRef = useRef(null);
   const [comment, setComment] = useState('');
 
@@ -50,7 +50,7 @@ function SinglePost(props) {
       <Grid>
         <Grid.Row>
           <Grid.Column width={2}>
-            <image src="https://react.semantic-ui.com/images/avatar/large/molly.png"
+            <image src="image" alt="pic"
               size="small"
               float="right" />
           </Grid.Column>
