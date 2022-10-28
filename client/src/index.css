@@ -3,6 +3,7 @@ html, * {
   padding: 0;
   box-sizing: border-box;
   background-color: lightgray;
+  max-height: 100%;
 }
 #home{
   justify-self: flex-start;
