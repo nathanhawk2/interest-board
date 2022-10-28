@@ -6,8 +6,10 @@ const postSchema = new Schema ({
     required: true,
     trim: true,
   },
-  username: String,
-  createdAt: String,
+  createdAt: {
+    type: String,
+    default: new Date().toLocaleDateString()
+  },
   theme:String,
   comments: [{
     body: {
@@ -15,7 +17,10 @@ const postSchema = new Schema ({
       required: true,
       trim: true,
     },
-    username: String,
+    user: {
+      type: Schema.Types.ObjectId,
+      ref: 'User',
+    },
     createdAt: String,
   }],
   likes:[{
@@ -24,7 +29,7 @@ const postSchema = new Schema ({
   }],
   user: {
     type: Schema.Types.ObjectId,
-    ref: 'users',
+    ref: 'User',
   }
 });
 
