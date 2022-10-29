@@ -21,7 +21,7 @@ const Home = () => {
     if (loading) {
       return <h2>Loading...</h2>
     } else {
-      return <UserList users={users} title="List of Users" />
+      return <UserList users={users} title="List of Users:" style={{ display: 'flex', margin: '5px' }} />
     }
   }
 
@@ -31,10 +31,10 @@ const Home = () => {
     if (loading) {
       return <h2>Loading...</h2>
     } else {
-      return <Posts users={users.post} title="Recent Posts"/>
+      return <Posts users={users.post} title="Recent Posts" />
     }
   }
- 
+
 
   const renderUsername = () => {
     if (!AuthService.loggedIn()) return null;
@@ -45,7 +45,7 @@ const Home = () => {
     var input, filter, li, a, i, txtValue;
     input = document.getElementById('searchInput');
     filter = input.value.toUpperCase();
-  
+
     for (i = 0; i < li.length; i++) {
       a = li[i].getElementsByTagName("a")[0];
       txtValue = a.textContent || a.innerText;
@@ -58,42 +58,45 @@ const Home = () => {
   }
 
   return (
-    <main>
-      <input style={{ display: 'flex', borderRadius: '8px', width: '200px', height: '30px'}} type="text" id="searchInput" onKeyUp="searchF()" placeholder="   Search for topics.."></input>
-      <button style={{ justifyContent: 'center', backgroundColor: 'black', color: 'white', width: '100px', height: '30px', borderRadius: '8px'}} type="submit">
+    <main className='col' style={{ margin: '10px', backgroundColor:'' }}>
+      <div className="" style={{ display: 'flex', justifyContent: 'center' }}>
+        <input style={{ display: 'flex', borderRadius: '8px', width: '200px', height: '30px', margin: '3px' }} type="text" id="searchInput" onKeyUp="searchF()" placeholder="   Search for topics.."></input>
+        <button style={{ justifyContent: 'center', backgroundColor: '#6ABEA7', color: 'white', width: '100px', height: '30px', borderRadius: '8px', margin: '2px' }} type="submit">
           Submit
         </button>
-      <div style={{ display: 'flex' }} className='container'>
+      </div>
+      <div style={{ display: 'flex', fontFamily: 'Josefin Sans, sansSerif, semiBold', fontSize: '50px', textDecoration: '', textTransform: 'uppercase' }} className='container'>
         {renderUsername()}
       </div>
-      <div className='container1' style={{ display: 'flex', justifyContent: 'flex-start', marginTop: '8px', color: 'black' }}>
+      <div className='container1 ' style={{ display: 'flex', justifyContent: 'flex-start', marginTop: '8px', color: 'black' }}>
         {renderUserList()}
       </div>
-      
-      <Grid columns={3}>
-        <Grid.Row className="page-title">
-          <h1>Recent Posts</h1>
-        </Grid.Row>
-        <Grid.Row>
-          {users && (
-            <Grid.Column>
-              <PostForm />
-            </Grid.Column>
-          )}
-          {loading ? (
-            <h1>Loading posts..</h1>
-          ) : (
-            <Transition.Group>
-              {posts &&
-                posts.map((post) => (
-                  <Grid.Column key={post.id} style={{ marginBottom: 20 }}>
-                    <PostCard post={post} />
-                  </Grid.Column>
-                ))}
-            </Transition.Group>
-          )}
-        </Grid.Row>
-      </Grid>
+      <div>
+        <Grid columns={3} >
+          <Grid.Row className="page-title">
+            <h1>Recent Posts</h1>
+          </Grid.Row>
+          <Grid.Row>
+            {users && (
+              <Grid.Column>
+                <PostForm />
+              </Grid.Column>
+            )}
+            {loading ? (
+              <h1>Loading posts..</h1>
+            ) : (
+              <Transition.Group>
+                {posts &&
+                  posts.map((post) => (
+                    <Grid.Column key={post.id} style={{ marginBottom: 20 }}>
+                      <PostCard post={post} />
+                    </Grid.Column>
+                  ))}
+              </Transition.Group>
+            )}
+          </Grid.Row>
+        </Grid>
+      </div>
     </main>
   );
 };

@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const User = ({ _id, username }) => {
   return (
     <div key={_id}>
-      <h4>
+      <h4 style={{backgroundColor: 'white', textTransform: 'uppercase'}}>
         <Link to={`/users/${_id}`}>
           {username}
         </Link>
@@ -23,8 +23,12 @@ const UserList = ({ users, title }) => {
 
   return (
     <>
-      <h3>{title}</h3>
-      {renderUsers()}
+      <div className='container row' style={{ border: 'solid black 2px', margin: '8px', borderRadius: '5px', padding: '5px', backgroundColor: 'white' }}>
+        <h3 style={{ textDecoration: 'underline', margin: '3px', backgroundColor: 'white' }}>{title}</h3>
+        <div style={{ margin: '3px' , textTransform: 'uppercase'}}>
+          {renderUsers()}
+        </div>
+      </div>
     </>
   );
 };
