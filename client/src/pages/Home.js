@@ -64,13 +64,11 @@ const Home = () => {
         <button style={{ justifyContent: 'center', backgroundColor: '#6ABEA7', color: 'white', width: '100px', height: '30px', borderRadius: '8px', margin: '2px' }} type="submit">
           Submit
         </button>
-
       </div>
       <div style={{ display: 'flex', fontFamily: 'Josefin Sans, sansSerif, semiBold', fontSize: '50px', textDecoration: '', textTransform: 'uppercase' }} className='container'>
         {renderUsername()}
       </div>
       <div className='container1 col-4 ' style={{ display: 'flex', justifyContent: 'flex-start', marginTop: '8px', color: 'black' }}>
-
         {renderUserList()}
       </div>
       <div>
