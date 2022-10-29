@@ -63,10 +63,10 @@ const Home = () => {
       <button style={{ justifyContent: 'center', backgroundColor: 'black', color: 'white', width: '100px', height: '30px', borderRadius: '8px'}} type="submit">
           Submit
         </button>
-      <div style={{ display: 'flex' }} className='container'>
+      <div style={{ display: 'flex' }} className='container row'>
         {renderUsername()}
       </div>
-      <div className='container1' style={{ display: 'flex', justifyContent: 'flex-start', marginTop: '8px', color: 'black' }}>
+      <div className='container1 col-4' style={{ display: 'flex', justifyContent: 'flex-start', marginTop: '8px', color: 'black' }}>
         {renderUserList()}
       </div>
       
