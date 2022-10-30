@@ -11,7 +11,7 @@ export default function createPost() {
     <div style={{margin:'1px'}}>
       <input  style={{ height: '60px', width: '400px', marginRight: '5px', borderRadius: '9px', marginTop: '30px'}} type="text" placeholder="Compose your post here" id="post"></input>
     </div>
-    <button className="postBtn " style={{cursor: 'pointer', justifyContent: 'center', backgroundColor: 'lightcoral', width: '400px', height: '40px', borderRadius: '9px', marginTop: '30px', fontWeight: 'bold'}}>Submit Post</button>
+    <button className="postBtn " style={{cursor: 'pointer', justifyContent: 'center', backgroundColor: '#6ABEA7', width: '400px', height: '40px', borderRadius: '9px', marginTop: '30px', fontWeight: 'bold', color: 'white'}}>Submit Post</button>
   </form>
   
 </div>

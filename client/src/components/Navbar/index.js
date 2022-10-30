@@ -11,14 +11,14 @@ function Navbar() {
   
   if (Auth.loggedIn()) {
     return (
-      <div style={{display:'flex'}}>
-        <Link style={{marginRight:'5px', color: 'black'}} to="/create">
+      <div style={{display:'flex', justifyContent:'space-between'}}>
+        <Link style={{marginRight:'8px', color: 'black'}} to="/create">
           Create a Post
         </Link>
-        <Link style={{ color: 'black'}} to="/me">
+        <Link style={{ color: 'black', marginRight: '8px'}} to="/me">
           {Auth.getProfile().data.username}'s profile
         </Link>
-        <button style={{ borderRadius: '8px', width: '50px', backgroundColor: 'black', color: 'white', marginLeft: '3px'}} onClick={logout}>
+        <button style={{ borderRadius: '8px', width: '50px', backgroundColor: '#5E6973', color: 'white', marginLeft: '3px', padding:'3px'}} onClick={logout}>
           Logout
         </button>
       </div>
