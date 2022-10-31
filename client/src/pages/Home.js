@@ -26,12 +26,12 @@ const Home = () => {
   }
 
   const { posts } = useQuery(FETCH_POSTS_QUERY);
-
-  const renderPosts = () => {
+  
+  const RenderPosts = () => {
     if (loading) {
       return <h2>Loading...</h2>
     } else {
-      return <Posts users={users.post} title="Recent Posts" />
+      return <Posts posts={posts} title="Recent Posts" />
     }
   }
 
@@ -66,7 +66,7 @@ const Home = () => {
         </button>
       </div>
       <div style={{ display: 'flex', fontFamily: 'Josefin Sans, sansSerif, semiBold', fontSize: '50px', textDecoration: '', textTransform: 'uppercase' }} className='container'>
-        {renderUsername()}
+        {/* {renderUsername()} */}
       </div>
       <div className='container1 col-4 ' style={{ display: 'flex', justifyContent: 'flex-start', marginTop: '8px', color: 'black' }}>
         {renderUserList()}
@@ -96,6 +96,7 @@ const Home = () => {
             )}
           </Grid.Row>
         </Grid>
+        {/* {renderPosts()} */}
       </div>
     </main>
   );

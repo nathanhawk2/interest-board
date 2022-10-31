@@ -17,10 +17,19 @@ export default function CreatePost() {
     });
   }
 
-  const handleSubmit = event => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
     console.log(auth.getProfile());
     console.log(formData);
+    try {
+      const { data } = await CreatePost({
+        variables: { ...formData },
+      });
+      console.log(data)
+      // CreatePost(data)
+    } catch (e) {
+      console.error(e);
+    }
 
   }
 
