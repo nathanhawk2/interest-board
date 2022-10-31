@@ -50,6 +50,7 @@ type Query {
   users: [User]
   user(id: ID!): User
   me: User
+  getUsers: [User]
   searchTheme: Post
   getPosts: [Post]
   getPost(postId: ID!): Post
