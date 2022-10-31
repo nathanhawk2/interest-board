@@ -60,7 +60,7 @@ type Query {
     addUser(email:String!, username:String!, password:String!): Auth
     login(email:String!, password:String!): Auth
     register(registerInput: RegisterInput): User!
-    createPost(userId: ID!, body: String!, username:String!, theme: String, createdAt:String!): Post!
+    createPost(userId: ID!, body: String!, theme: String): Post!
     deletePost(postId: ID!): String!
     createComment(postId: ID!, body: String!, userId: ID!): Post!
     deleteComment(postId: ID!, commentId: ID!): Post!
