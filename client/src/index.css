@@ -7,15 +7,21 @@ html, * {
 #home{
   justify-self: flex-start;
   position: absolute;
-  left: 5px;
+  left: 15px;
   color: black;
+  font-size: 32px;
 }
 #home:hover{
-  color: red;
+  color: rgba(119, 0, 255, 0.562);
 }
 #post  {
   min-height:150px;
 }
 .postBtn{
   min-width: 150px;
+}
+
+.recent{
+  text-align: center;
+  margin-top: 2%;
 }
