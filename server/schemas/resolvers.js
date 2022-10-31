@@ -18,10 +18,15 @@ const resolvers = {
       throw new AuthenticationError('You need to be logged in!');
     },
     getPosts: async(_,args,context) => {
-      return await Post.find({});
+      const posts = await Post.find({});
+      console.log(posts);
+      return posts;
+    },
+    getUsers: async (_, args, context) => {
+      return await User.find({})
     },
     searchTheme: async (_ , args) => {
-      return await Post.find({ theme: args.theme})
+      return await Post.find({theme: args.theme})
     }
   },
 

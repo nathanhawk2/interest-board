@@ -1,12 +1,41 @@
-import React from "react";
+import React, {useState} from "react";
+import { useMutation } from "@apollo/client";
+import CREATE_POST from "../utils/mutations";
+import { getProfile } from "../utils/auth";
 
 export default function createPost() {
+  const [createPost] = useMutation(CREATE_POST);
+  const [formData, setFormData] = useState({
+    userId: getProfile().id
+  });
+
+  const handleChange = event => {
+    let { name, value } = event.target;
+    setFormData({
+      ...formData,
+      [name]: value
+    });
+  }
+
+  const handleSubmit = event => {
+    event.preventDefault();
+    console.log(getProfile());
+    console.log(formData);
+
+  }
+
   return (   
 <div style={{display:'flex', justifyContent:'center', margin:'5px'}} className='createPost' >
-  <form style={{display: 'flex', boxSizing: 'border-box', justifyContent: 'center', flexDirection: 'column'}}>
+  <form onSubmit={handleSubmit} style={{display: 'flex', boxSizing: 'border-box', justifyContent: 'center', flexDirection: 'column'}}>
     <h2 style={{display: 'flex', justifyContent: 'center',margin:'5px', fontSize: '30px'}} className="header">Create a Post</h2>
     <div style={{margin:'3px'}}>
-      <input  style={{ height: '60px', width: '400px', marginRight: '5px', borderRadius: '9px', marginTop: '30px'}} type="text" id="theme" placeholder="Theme"></input>
+      <input  
+        name="theme"
+        onChange={handleChange}
+        style={{ height: '60px', width: '400px', marginRight: '5px', borderRadius: '9px', marginTop: '30px'}} type="text" 
+        id="theme"
+        placeholder="Theme"
+        ></input>
     </div>
     <div style={{margin:'1px'}}>
       <input  style={{ height: '60px', width: '400px', marginRight: '5px', borderRadius: '9px', marginTop: '30px'}} type="text" placeholder="Compose your post here" id="post"></input>

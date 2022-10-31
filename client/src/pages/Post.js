@@ -26,7 +26,7 @@ function SinglePost(props) {
   const submitComment = useMutation(SUBMIT_COMMENT_MUTATION, {
     update() {
       setComment('');
-      commentInputRef.cuurrent.blur();
+      commentInputRef.current.blur();
     },
     variables: {
       postId,
