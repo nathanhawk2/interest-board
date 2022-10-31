@@ -68,14 +68,7 @@ const Profile = () => {
         {renderCurrentUserInfo()}
         {renderUserList()}
       </div>
-      <h1 style={{ display: 'flex', justifyContent: 'center'}}>Bio</h1>
-      <p style={{ display: 'inline-block', justifyContent: 'center', textAlign: 'center', padding: '20px', marginLeft: '500px', marginRight: '500px'}}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vitae velit non ligula pretium consequat. Vivamus pretium rutrum tortor, vel consequat nunc maximus sit amet. Ut pharetra rutrum justo, in rhoncus risus aliquam in.</p>
-      <div>
-        <h1 style={{ display: 'flex', justifyContent: 'center'}}>Recent Posts</h1>
-        <div>
-          
-        </div>
-      </div>
+     
     </div>
   );
 };
