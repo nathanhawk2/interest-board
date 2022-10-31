@@ -78,12 +78,6 @@ const Profile = () => {
         <h1 className='' style={{ display: 'flex', justifyContent: 'center'}}>Bio</h1>
         <p style={{ display: 'inline-block', justifyContent: 'center', textAlign: 'center', padding: '20px', marginLeft: '500px', marginRight: '500px',  backgroundColor: 'white',borderRadius:'8px' }}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vitae velit non ligula pretium consequat. Vivamus pretium rutrum tortor, vel consequat nunc maximus sit amet. Ut pharetra rutrum justo, in rhoncus risus aliquam in.</p>
       </div>
-      <div>
-        <h1 style={{ display: 'flex', justifyContent: 'center', margin:'30px' }}>Recent Posts</h1>
-        <div>
-{/* post should render here */}
-        </div>
-      </div>
     </div>
   );
 };
