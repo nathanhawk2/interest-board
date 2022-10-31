@@ -23,13 +23,13 @@ const typeDefs = gql`
     likes: [Like]
     likeCount: Int
     commentCount: Int
-    user: ID!
+    userId: User!
   }
 
   type Comment {
     id: ID!
     createdAt: String!
-    user: ID!
+    userId: ID!
     body: String!
   }
 

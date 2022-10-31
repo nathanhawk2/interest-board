@@ -54,7 +54,10 @@ const resolvers = {
       return { token, user };
     },
     createPost: async (_, args, context) => {
-      return await Post.create(args)
+      let post = await Post.create(args);
+      post = await post.populate("userId");
+      console.log(post)
+      return post;
     },
     deletePost: async (_, {postID}, context) => {
       return await Post.findOneAndDelete({postId: ID})

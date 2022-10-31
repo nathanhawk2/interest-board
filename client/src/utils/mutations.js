@@ -25,15 +25,20 @@ export const ADD_USER = gql`
 `;
 
 export const CREATE_POST = gql`
-  mutation createPost($id: ID!, $body:String!, $username: String!, $createdAt: String!) {
-    createPost(thoughtText: $thoughtText) {
-      _id
-      thoughtText
-      thoughtAuthor
+  mutation createPost($userId: ID!, $body:String!, $theme: String!) {
+    createPost(userId: $userId, body: $body, theme: $theme ) {
+      id
+      theme
+      userId {
+        _id
+        username
+        email
+      }
       createdAt
       comments {
-        _id
-        commentText
+        id
+        body
+        userId
       }
     }
   }
