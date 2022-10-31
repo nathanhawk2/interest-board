@@ -23,13 +23,13 @@ const typeDefs = gql`
     likes: [Like]
     likeCount: Int
     commentCount: Int
-    user: ID!
+    userId: User!
   }
 
   type Comment {
     id: ID!
     createdAt: String!
-    user: ID!
+    userId: ID!
     body: String!
   }
 
@@ -50,6 +50,7 @@ type Query {
   users: [User]
   user(id: ID!): User
   me: User
+  getUsers: [User]
   searchTheme: Post
   getPosts: [Post]
   getPost(postId: ID!): Post
@@ -59,7 +60,7 @@ type Query {
     addUser(email:String!, username:String!, password:String!): Auth
     login(email:String!, password:String!): Auth
     register(registerInput: RegisterInput): User!
-    createPost(userId: ID!, body: String!, username:String!, theme: String, createdAt:String!): Post!
+    createPost(userId: ID!, body: String!, theme: String): Post!
     deletePost(postId: ID!): String!
     createComment(postId: ID!, body: String!, userId: ID!): Post!
     deleteComment(postId: ID!, commentId: ID!): Post!

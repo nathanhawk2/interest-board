@@ -8,6 +8,8 @@ import { QUERY_USERS, QUERY_USER, QUERY_ME } from '../utils/queries';
 // Components
 import UserList from '../components/UserList';
 
+
+
 const Profile = () => {
   const { id } = useParams();
 
@@ -52,23 +54,30 @@ const Profile = () => {
   const renderCurrentUserInfo = () => {
     if (id) return null;
     return (
-      <ul style={{ padding: '6px'}}>
-        <li>Username: {user.username}</li>
-        <li>Email: {user.email}</li>
+      <div >
+      <ul className='m-3 col' style={{ padding: '6px' ,  listStyle: "none"  }}>
+        <li style={{textTransform: 'uppercase'}}>Username: {user.username}</li>
+        <li style={{textTransform: 'uppercase'}}>Email: {user.email}</li>
       </ul>
+      </div>
     );
   }
 
   return (
-    <div>
-      <div>
-        <h2 style={{ padding: '5px'}}>
-          Viewing {id ? `${user.username}'s` : 'your'} profile.
+    <div className='m-3'>
+      <div className=' container m-3' style={{margin: '5px'}}>
+        <h2  className='container ' tyle={{ padding: '5px' }}>
+          Viewing {id ? `${user.username}'s` : 'your'} profile
         </h2>
         {renderCurrentUserInfo()}
+        <div>
         {renderUserList()}
+        </div>
       </div>
-     
+      <div className='' style={{}}>
+        <h1 className='' style={{ display: 'flex', justifyContent: 'center'}}>Bio</h1>
+        <p style={{ display: 'inline-block', justifyContent: 'center', textAlign: 'center', padding: '20px', marginLeft: '500px', marginRight: '500px',  backgroundColor: 'white',borderRadius:'8px' }}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vitae velit non ligula pretium consequat. Vivamus pretium rutrum tortor, vel consequat nunc maximus sit amet. Ut pharetra rutrum justo, in rhoncus risus aliquam in.</p>
+      </div>
     </div>
   );
 };

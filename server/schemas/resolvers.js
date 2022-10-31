@@ -18,10 +18,15 @@ const resolvers = {
       throw new AuthenticationError('You need to be logged in!');
     },
     getPosts: async(_,args,context) => {
-      return await Post.find({});
+      const posts = await Post.find({});
+      console.log(posts);
+      return posts;
+    },
+    getUsers: async (_, args, context) => {
+      return await User.find({})
     },
     searchTheme: async (_ , args) => {
-      return await Post.find({ theme: args.theme})
+      return await Post.find({theme: args.theme})
     }
   },
 
@@ -49,7 +54,10 @@ const resolvers = {
       return { token, user };
     },
     createPost: async (_, args, context) => {
-      return await Post.create(args)
+      let post = await Post.create(args);
+      post = await post.populate("userId");
+      console.log(post)
+      return post;
     },
     deletePost: async (_, {postID}, context) => {
       return await Post.findOneAndDelete({postId: ID})
