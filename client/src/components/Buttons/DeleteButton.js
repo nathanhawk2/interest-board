@@ -3,7 +3,7 @@ import gql from 'graphql-tag';
 import { useMutation } from '@apollo/react-hooks';
 import { Button, Confirm, Icon } from 'semantic-ui-react';
 
-import { FETCH_POSTS_QUERY } from '../../utils/graphql';
+import { FETCH_POSTS_QUERY } from '../../utils/mutations';
 import MyPopup from '../../utils/MyPopup';
 
 function DeleteButton({ postId, commentId, callback }) {
@@ -61,7 +61,7 @@ const DELETE_COMMENT_MUTATION = gql`
       id
       comments {
         id
-        username
+        user
         createdAt
         body
       }

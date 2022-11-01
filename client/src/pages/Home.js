@@ -10,7 +10,7 @@ import Posts from '../components/Posts';
 import { Grid, Transition } from 'semantic-ui-react';
 import PostCard from '../components/Posts/PostCard';
 import PostForm from '../components/Posts/PostForm';
-import { FETCH_POSTS_QUERY } from '../utils/graphql';
+import { FETCH_POSTS_QUERY } from '../utils/mutations';
 
 
 const Home = () => {
@@ -41,7 +41,7 @@ const Home = () => {
     return AuthService.getProfile().data.username;
   }
 
-  function searchF() {
+  const search = () => {
     var input, filter, li, a, i, txtValue;
     input = document.getElementById('searchInput');
     filter = input.value.toUpperCase();
@@ -60,8 +60,8 @@ const Home = () => {
   return (
     <main className='col' style={{ margin: '10px', backgroundColor:'' }}>
       <div className="" style={{ display: 'flex', justifyContent: 'center' }}>
-        <input style={{ display: 'flex', borderRadius: '8px', width: '200px', height: '30px', margin: '3px' }} type="text" id="searchInput" onKeyUp="searchF()" placeholder="   Search for topics.."></input>
-        <button style={{ justifyContent: 'center', backgroundColor: '#6ABEA7', color: 'white', width: '100px', height: '30px', borderRadius: '8px', margin: '2px' }} type="submit">
+        <input style={{ display: 'flex', borderRadius: '8px', width: '200px', height: '30px', margin: '3px' }} type="text" id="searchInput" placeholder="Search for topics.."></input>
+        <button style={{ justifyContent: 'center', backgroundColor: '#6ABEA7', color: 'white', width: '100px', height: '30px', borderRadius: '8px', margin: '2px' }} onClick={search} type="submit">
           Submit
         </button>
       </div>

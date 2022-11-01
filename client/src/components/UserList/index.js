@@ -1,12 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const User = ({ _id, username }) => {
+const User = ({ _id, user }) => {
   return (
     <div key={_id}>
       <h4 style={{backgroundColor: 'white', textTransform: 'uppercase'}}>
         <Link to={`/users/${_id}`}>
-          {username}
+          {user}
         </Link>
       </h4>
     </div>

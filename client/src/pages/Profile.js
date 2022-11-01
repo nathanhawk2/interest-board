@@ -8,8 +8,6 @@ import { QUERY_USERS, QUERY_USER, QUERY_ME } from '../utils/queries';
 // Components
 import UserList from '../components/UserList';
 
-
-
 const Profile = () => {
   const { id } = useParams();
 
@@ -35,7 +33,7 @@ const Profile = () => {
     return <h4>Loading...</h4>;
   }
 
-  if (!user?.username) {
+  if (!user.username) {
     return (
       <h4>
         You need to be logged in to see this. Use the navigation links above to
@@ -63,6 +61,12 @@ const Profile = () => {
     );
   }
 
+  const renderUserPosts = () => {
+    return (
+      <h1>Reeee</h1>
+    );
+  }
+
   return (
     <div className='m-3'>
       <div className=' container m-3' style={{margin: '5px'}}>
@@ -77,6 +81,13 @@ const Profile = () => {
       <div className='' style={{}}>
         <h1 className='' style={{ display: 'flex', justifyContent: 'center'}}>Bio</h1>
         <p style={{ display: 'inline-block', justifyContent: 'center', textAlign: 'center', padding: '20px', marginLeft: '500px', marginRight: '500px',  backgroundColor: 'white',borderRadius:'8px' }}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vitae velit non ligula pretium consequat. Vivamus pretium rutrum tortor, vel consequat nunc maximus sit amet. Ut pharetra rutrum justo, in rhoncus risus aliquam in.</p>
+      </div>
+      <div>
+        <h1 style={{ display: 'flex', justifyContent: 'center', margin:'30px' }}>Recent Posts</h1>
+        <div>
+          {renderUserPosts()}
+{/* post should render here */}
+        </div>
       </div>
     </div>
   );

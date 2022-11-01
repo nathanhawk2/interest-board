@@ -4,7 +4,7 @@ import gql from 'graphql-tag';
 import { useMutation } from '@apollo/react-hooks';
 
 import { useForm } from '../../utils/hooks';
-import { FETCH_POSTS_QUERY } from '../../utils/graphql';
+import { FETCH_POSTS_QUERY } from '../../utils/mutations';
 
 function PostForm() {
   const { values, onChange, onSubmit } = useForm(createPostCallback, {
@@ -42,17 +42,17 @@ const CREATE_POST_MUTATION = gql`
       id
       body
       createdAt
-      username
+      user
       likes {
         id
-        username
+        user
         createdAt
       }
       likeCount
       comments {
         id
         body
-        username
+        user
         createdAt
       }
       commentCount
