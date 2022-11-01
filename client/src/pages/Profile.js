@@ -63,7 +63,7 @@ const Profile = () => {
 
   const renderUserPosts = () => {
     return (
-      <h1>Reeee</h1>
+      <h1></h1>
     );
   }
 
