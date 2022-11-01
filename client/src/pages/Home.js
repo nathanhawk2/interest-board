@@ -7,33 +7,22 @@ import { QUERY_USERS } from '../utils/queries';
 // Components
 import UserList from '../components/UserList';
 import Posts from '../components/Posts';
-import { Grid, Transition } from 'semantic-ui-react';
-import PostCard from '../components/Posts/PostCard';
+import { Grid, Transition, Card } from 'semantic-ui-react';
+// import PostCard from '../components/Posts/PostCard';
 import PostForm from '../components/Posts/PostForm';
-import { FETCH_POSTS_QUERY } from '../utils/mutations';
+import { FETCH_POSTS_QUERY } from '../utils/queries';
+import moment from 'moment';
 
 
 const Home = () => {
   const { loading, data } = useQuery(QUERY_USERS);
   const users = data?.users || [];
 
-  const renderUserList = () => {
-    if (loading) {
-      return <h2>Loading...</h2>
-    } else {
-      return <UserList users={users} title="List of Users:" style={{ display: 'flex', margin: '5px' }} />
-    }
-  }
 
-  const { posts } = useQuery(FETCH_POSTS_QUERY);
-  
-  const RenderPosts = () => {
-    if (loading) {
-      return <h2>Loading...</h2>
-    } else {
-      return <Posts posts={posts} title="Recent Posts" />
-    }
-  }
+
+  const { loading: postsLoading, data: postsData } = useQuery(FETCH_POSTS_QUERY);
+
+
 
 
   const renderUsername = () => {
@@ -56,9 +45,9 @@ const Home = () => {
       }
     }
   }
-
+  const posts = postsData?.getPosts || [];
   return (
-    <main className='col' style={{ margin: '10px', backgroundColor:'' }}>
+    <main className='col' style={{ margin: '10px', backgroundColor: '' }}>
       <div className="" style={{ display: 'flex', justifyContent: 'center' }}>
         <input style={{ display: 'flex', borderRadius: '8px', width: '200px', height: '30px', margin: '3px' }} type="text" id="searchInput" placeholder="Search for topics.."></input>
         <button style={{ justifyContent: 'center', backgroundColor: '#6ABEA7', color: 'white', width: '100px', height: '30px', borderRadius: '8px', margin: '2px' }} onClick={search} type="submit">
@@ -83,17 +72,21 @@ const Home = () => {
               <h1>Loading posts..</h1>
             ) : (
               <Transition.Group>
-                {posts &&
-                  posts.map((post) => (
-                    <Grid.Column key={post.id} style={{ marginBottom: 20 }}>
-                      <PostCard post={post} />
-                    </Grid.Column>
-                  ))}
+                {posts.map((post) => (
+                  <Card fluid id='card'>
+                    <Card.Content>
+                      <Card.Header></Card.Header>
+                      <Card.Description></Card.Description>
+                    {moment(post.createdAt).fromNow(true)}  ago
+                      <Card.Meta></Card.Meta>
+                    </Card.Content>
+                    {post.body}
+                  </Card>
+                ))};
               </Transition.Group>
             )}
           </Grid.Row>
         </Grid>
-        {/* {renderPosts()} */}
       </div>
     </main>
   );

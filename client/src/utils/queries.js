@@ -63,3 +63,28 @@ export const QUERY_LIKE = gql`
     }  
   }
 `
+export const FETCH_POSTS_QUERY = gql`
+  {
+    getPosts {
+      id
+      body
+      createdAt
+      userId {
+        _id
+        username
+        email
+      }
+      likeCount
+      likes {
+        username
+      }
+      commentCount
+      comments {
+        id
+        userId
+        createdAt
+        body
+      }
+    }
+  }
+`;

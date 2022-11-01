@@ -1,18 +1,20 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { Button, Card, Icon, Label, Image } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 import moment from 'moment';
-
-import AuthContext from '../../utils/auth';
 import LikeButton from '../Buttons/LikeButton';
 import DeleteButton from '../Buttons/DeleteButton';
 import MyPopup from '../../utils/MyPopup';
+import { QUERY_USERS } from '../../utils/queries';
+import { useQuery } from '@apollo/client';
 
 function PostCard({
   post: { body, createdAt, id, likeCount, commentCount, likes }
 }) {
-  const { user } = useContext(AuthContext);
-
+  // const { user } = useContext(AuthContext);
+  // const { loading, data } = useQuery(QUERY_USERS);
+  // const user = data?.users || [];
+ const user = 'user';
   return (
     <Card fluid>
       <Card.Content>

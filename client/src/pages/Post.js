@@ -4,8 +4,8 @@ import { useQuery, useMutation } from '@apollo/react-hooks';
 import moment from 'moment';
 import { Button, Card, Form, Grid, Image, Icon, Label } from 'semantic-ui-react';
 import AuthService from '../utils/auth';
-import likeBtn from '../components/Buttons/LikeButton';
-import delBtn from '../components/Buttons/DeleteButton';
+// import likeBtn from '../components/Buttons/LikeButton';
+// import delBtn from '../components/Buttons/DeleteButton';
 import MyPopup from '../utils/MyPopup';
 import { SUBMIT_COMMENT_MUTATION } from '../utils/mutations';
 
