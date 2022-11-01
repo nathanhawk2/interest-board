@@ -68,13 +68,10 @@ const Home = () => {
       <div style={{ display: 'flex', fontFamily: 'Josefin Sans, sansSerif, semiBold', fontSize: '50px', textDecoration: '', textTransform: 'uppercase' }} className='container'>
         {/* {renderUsername()} */}
       </div>
-      <div className='container1 col-4 ' style={{ display: 'flex', justifyContent: 'flex-start', marginTop: '8px', color: 'black' }}>
-        {renderUserList()}
-      </div>
       <div>
         <Grid columns={3} >
           <Grid.Row className="page-title">
-            <h1>Recent Posts</h1>
+            <h1 class="recent">Recent Posts</h1>
           </Grid.Row>
           <Grid.Row>
             {users && (
