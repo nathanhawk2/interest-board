@@ -12,12 +12,14 @@
 
 ## Description
 
-An application that allows individauls with similar interest to connect and share infomation about those common interest.
+An application that allows individauls with similar interest to connect and share infomation about those common interest. Users can create posts with a title and body and post are displayed on the homescreen.
 
 ## Instructions
-Log in or sign up to get access to the interest board. Once you have access to the interest board you can go to the homepage to search themes and topics you would like to discuss or learn more about. You can click on the Create a post tab to make a post about any theme or topic you would like. 
+Log in or sign up to get access to the interest board. Once you have access to the interest board you can go to the homepage to view posts about topics you would like to discuss or learn more about. You can click on the Create a post tab to make a post about any theme or topic you would like. 
+
 ## Usage
 To connect, share and seek new knowledge with like-minded individuals.
+
 ## Installation
 Npm Install
 
@@ -29,3 +31,4 @@ Npm Install
  http://github.com/https://github.com/nathanhawk2/interest-board
  
  ## Visuals
+![]()
