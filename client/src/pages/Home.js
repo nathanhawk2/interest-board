@@ -49,10 +49,6 @@ const Home = () => {
   return (
     <main className='col' style={{ margin: '10px', backgroundColor: '' }}>
       <div className="" style={{ display: 'flex', justifyContent: 'center' }}>
-        <input style={{ display: 'flex', borderRadius: '8px', width: '200px', height: '30px', margin: '3px' }} type="text" id="searchInput" placeholder="Search for topics.."></input>
-        <button style={{ justifyContent: 'center', backgroundColor: '#6ABEA7', color: 'white', width: '100px', height: '30px', borderRadius: '8px', margin: '2px' }} onClick={search} type="submit">
-          Submit
-        </button>
       </div>
       <div style={{ display: 'flex', fontFamily: 'Josefin Sans, sansSerif, semiBold', fontSize: '50px', textDecoration: '', textTransform: 'uppercase' }} className='container'>
         {/* {renderUsername()} */}
